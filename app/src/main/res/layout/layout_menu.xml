@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#33000000"
+                android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="60dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/layout_setting"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:background="@drawable/item_bg_style"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/ico_setting"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Blog"
+                android:textColor="#282828"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#e0e0e0"/>
+
+        <LinearLayout
+            android:id="@+id/layout_like"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:background="@drawable/item_bg_style"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/icon_about"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Link"
+                android:textColor="#282828"
+                android:textSize="15sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

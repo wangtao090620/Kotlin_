@@ -1,0 +1,75 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_title"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="?attr/colorPrimary"
+            app:tabIndicatorColor="@color/tab_layout_indicator"
+            app:tabPaddingEnd="0dp"
+            app:tabPaddingStart="0dp"
+            app:tabSelectedTextColor="@color/tab_layout_text_color_selected"
+            app:tabTextAppearance="@style/TabLayoutTextAppearance"
+            app:tabTextColor="@color/tab_layout_text_color"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:fitsSystemWindows="true">
+
+        <TextView
+            android:id="@+id/txt_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20.5dp"
+            android:layout_marginStart="20.5dp"
+            android:gravity="center"
+            android:text="Gank"
+            android:textColor="#ffffff"
+            android:textSize="22sp"/>
+
+        <ImageView
+            android:id="@+id/img_menu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/product_name"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_menu"/>
+
+        <ImageView
+            android:id="@+id/img_like"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/product_name"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_like_default"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</RelativeLayout>

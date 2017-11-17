@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+/*
+**
+** Copyright 2012, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+
+-->
+
+<resources>
+
+    <!-- Color resources for IceCreamSandwich theme. Base color = 33B5E5 -->
+    <!-- android:color/holo_blue_light value is #FF33B5E5 -->
+    <color name="spilt_line">#CFCFCF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="btn_select">#888888</color>
+    <color name="common_bg">@color/white</color>
+    <color name="toolbar_spilt_line">#CDCDCD</color>
+    <color name="toolbar_btn_select">#D9D9D9</color>
+    <color name="toolbar_btn_nomal">@color/emoji_nav_bg_color</color>
+    <color name="highlight_color_ics">#FF33B5E5</color>
+    <color name="typed_word_color_ics">#D833B5E5</color>
+    <color name="suggested_word_color_ics">#B233B5E5</color>
+    <color name="highlight_translucent_color_ics">#9933B5E5</color>
+    <color name="key_text_color_holo">@android:color/white</color>
+    <color name="key_text_inactivated_color_holo">#66E0E4E5</color>
+    <color name="key_hint_letter_color_holo">#80000000</color>
+    <color name="key_hint_label_color_holo">#A0FFFFFF</color>
+    <color name="key_shifted_letter_hint_inactivated_color_holo">#66E0E4E5</color>
+    <color name="key_shifted_letter_hint_activated_color_holo">@android:color/white</color>
+    <color name="spacebar_text_color_holo">#FFC0C0C0</color>
+    <color name="spacebar_text_shadow_color_holo">#80000000</color>
+    <color name="gesture_floating_preview_color_holo">#C0000000</color>
+    <color name="emoji_tab_page_indicator_background_holo">#111111</color>
+    <!-- Color resources for KLP theme. Base color = F0F0F0 -->
+    <color name="highlight_color_klp">#FFF0F0F0</color>
+    <color name="typed_word_color_klp">#D8F0F0F0</color>
+    <color name="suggested_word_color_klp">#B2F0F0F0</color>
+    <color name="highlight_translucent_color_klp">#99E0E0E0</color>
+    <!--
+         Color resources for LXX_Light theme.
+         15%:0x26 70%:0xB3 75%:0xC0 80%:0xCC 85%:0xD9 90%:0xE6
+    -->
+    <color name="key_text_color_lxx_light">#37474F</color>
+    <color name="key_functional_text_color_lxx_light">#CC37474F</color>
+    <color name="key_text_inactive_color_lxx_light">#B337474F</color>
+    <color name="key_hint_letter_color_lxx_light">#B337474F</color>
+    <color name="language_on_spacebar_text_color_lxx_light">#B337474F</color>
+    <color name="highlight_color_lxx_light">#4DB6AC</color>
+    <color name="auto_correct_color_lxx_light">#37474F</color>
+    <color name="typed_word_color_lxx_light">#D937474F</color>
+    <color name="suggested_word_color_lxx_light">#B337474F</color>
+    <color name="gesture_trail_color_lxx_light">#4DB6AC</color>
+    <color name="sliding_key_input_preview_color_lxx_light">#B34DB6AC</color>
+    <color name="key_background_lxx_light">#ECEFF1</color>
+    <color name="key_background_pressed_lxx_light">#2637474F</color>
+    <color name="suggested_word_background_selected_lxx_light">#2637474F</color>
+    <color name="gesture_floating_preview_color_lxx_light">#E6ECEFF1</color>
+    <color name="emoji_tab_page_indicator_background_lxx_light">#E4E7E9</color>
+    <!--
+         Color resources for LXX_Dark theme.
+         10%:0x19 50%:0x80 70%:0xB3 75%:0xC0 80%:0xCC 85%:0xD9 90%:0xE6
+    -->
+    <color name="key_text_color_lxx_dark">#CCFFFFFF</color>
+    <color name="key_functional_text_color_lxx_dark">#CCFFFFFF</color>
+    <color name="key_text_inactive_color_lxx_dark">#80FFFFFF</color>
+    <color name="key_hint_letter_color_lxx_dark">#80FFFFFF</color>
+    <color name="language_on_spacebar_text_color_lxx_dark">#B3FFFFFF</color>
+    <color name="highlight_color_lxx_dark">#80CBC4</color>
+    <color name="auto_correct_color_lxx_dark">#FFFFFF</color>
+    <color name="typed_word_color_lxx_dark">#D9FFFFFF</color>
+    <color name="suggested_word_color_lxx_dark">#B3FFFFFF</color>
+    <color name="gesture_trail_color_lxx_dark">#80CBC4</color>
+    <color name="sliding_key_input_preview_color_lxx_dark">#B380CBC4</color>
+    <color name="key_background_lxx_dark">#263238</color>
+    <color name="key_background_pressed_lxx_dark">#19FFFFFF</color>
+    <color name="suggested_word_background_selected_lxx_dark">#19FFFFFF</color>
+    <color name="gesture_floating_preview_color_lxx_dark">#E621272B</color>
+    <color name="emoji_tab_page_indicator_background_lxx_dark">#21272B</color>
+    <!-- Color resources for setup wizard and tutorial -->
+    <color name="setup_background">#FFEBEBEB</color>
+    <color name="setup_text_dark">#FF707070</color>
+    <color name="setup_text_action">@android:color/holo_blue_light</color>
+    <color name="setup_step_background">@android:color/background_light</color>
+    <color name="setup_welcome_video_margin_color">#FFCCCCCC</color>
+    <!-- Accent color for the notification. We need to match this to the OS build -->
+    <color name="notification_accent_color">#FF607D8B</color>
+
+    <!-- common -->
+    <color name="swift_tab_color">#537FF9</color>
+    <color name="swift_tab_selected">#FFFFFF</color>
+    <color name="self_tran_white">#80FFFFFF</color>
+    <color name="grey_bg_1">#F1F4F9</color>
+    <color name="grey_bg_2">#dddddd</color>
+    <color name="white_bg_1">#FFFFFF</color>
+    <color name="orangle_bg_1">#FFFCD8</color>
+    <color name="title_tv_1">#666666</color>
+    <color name="grey_tv_1">#999999</color>
+    <color name="grey_tv_2">#282828</color>
+    <color name="grey_tv_3">#B5B5B5</color>
+    <color name="grey_tv_4">#99BABABA</color>
+    <color name="grey_tv_6">#333333</color>
+    <color name="orangle_tv_1">#FBBC05</color>
+    <color name="blue_title">#547DF9</color>
+    <color name="white_tv_1">#CCFFFFFF</color>
+    <color name="tab_selected">#A8FFFFFF</color>
+    <color name="black_shadow_1">#33000000</color>
+    <color name="red_tv_1">#DB1D1F</color>
+    <color name="bg_black_1">#66000000</color>
+    <color name="grey_progress_1">#A0A0A0</color>
+    <color name="orange_bg_1">#FED759</color>
+    <color name="orange_tv_1">#E8B62A</color>
+    <color name="orange_stroke_1">#E6B005</color>
+    <color name="emoji_nav_bg_color">#3B3B3B</color>
+    <color name="emoji_nav_font_color">#FFFFFF</color>
+    <color name="emoji_main_ui_bg">#1E2024</color>
+    <color name="emoji_nav_bg">#1C1E22</color>
+    <color name="emoji_nav_bottom_bg">#171A1D</color>
+    <color name="emoji_nav_v_line">#2E3234</color>
+    <color name="v_line">#1f2225</color>
+    <color name="menu_v_line">#3b4041</color>
+    <color name="select_ime_bg_color">#f1f5f9</color>
+    <color name="select_item_color">#444B4E28</color>
+    <color name="select_add_bg">#32B196</color>
+    <color name="white_color_a20">#FFFFFF33</color>
+    <color name="key_language_bg">#2D3238</color>
+
+    <!--  -->
+    <color name="blue">#4b70e0</color>
+    <color name="light2gray">#CCCCCC</color>
+    <color name="keyboardlayout_color">#2c343a</color>
+    <color name="grey_tv_5">#BFB8B8</color>
+
+    <!-- guide -->
+    <color name="guide_btn_gray">#80ffffff</color>
+    <color name="guide_btn_enabled">#716cfe</color>
+    <color name="window_background">#FFF5F5F5</color>
+    <color name="guide_btn_text_start">#547DF9</color>
+
+    <!-- tab layout -->
+    <color name="tab_layout_indicator">#A8FFFFFF</color>
+    <color name="tab_layout_text_color">#56FFFFFF</color>
+    <color name="tab_layout_text_color_selected">#A8FFFFFF</color>
+
+    <color name="lang_select_bg_default">#E6000000</color>
+    <color name="lang_select_title">#99FFFFFF</color>
+    <color name="lang_select_divider">#4CFFFFFF</color>
+    <color name="lang_select_list_divider">#19FFFFFF</color>
+
+    <color name="preview_bg">#DDDDDD</color>
+    <color name="skin_panel_bg">#CCFFFFFF</color>
+    <color name="skin_panel_tv_bg">#80000000</color>
+    <color name="tool_bar_bg">#30FFFFFF</color>
+    <color name="none">#00000000</color>
+
+    <color name="divider_grey_1">#E6E6E6</color>
+    <color name="divider_grey_2">#DCDCDC</color>
+
+    <color name="guide_bg">#60000000</color>
+    <color name="guide_text_color">#547df9</color>
+    <color name="guide_frame_color">#FFFF00</color>
+
+    <!-- keyboard -->
+    <color name="keyboard_custom_emotion_bg">#282c30</color>
+
+    <!-- emoji palettes view colors -->
+    <!-- normal -->
+    <color name="emoji_category_bg">#25292d</color>
+    <color name="emoji_category_btn_normal">#00000000</color>
+    <color name="emoji_category_btn_selected">#282c30</color>
+    <color name="emoji_category_btn_text_normal">#4cffffff</color>
+    <color name="emoji_category_btn_text_selected">#ffffff</color>
+    <color name="emoji_content_bg">#282c30</color>
+    <color name="emoji_content_text_bg">#33000000</color>
+    <color name="emoji_type_bg">#1f2225</color>
+    <color name="emoji_type_btn_normal">#00000000</color>
+    <color name="emoji_type_btn_selected">#00000000</color>
+    <color name="emoji_type_btn_delete_normal">#25292d</color>
+    <color name="emoji_type_btn_delete_selected">#25292d</color>
+    <color name="emoji_splitter">#2E3234</color>
+    <color name="emoji_splitter_vertical">#3b4041</color>
+    <!-- light -->
+    <color name="emoji_category_bg_light">#00000000</color>
+    <color name="emoji_category_btn_normal_light">#00000000</color>
+    <color name="emoji_category_btn_selected_light">#4dffffff</color>
+    <color name="emoji_category_btn_text_normal_light">#4c37474f</color>
+    <color name="emoji_category_btn_text_selected_light">#37474f</color>
+    <color name="emoji_content_bg_light">#4dffffff</color>
+    <color name="emoji_content_text_bg_light">#19000000</color>
+    <color name="emoji_type_bg_light">#00000000</color>
+    <color name="emoji_type_btn_normal_light">#00000000</color>
+    <color name="emoji_type_btn_selected_light">#00000000</color>
+    <color name="emoji_type_btn_delete_normal_light">#80ffffff</color>
+    <color name="emoji_type_btn_delete_selected_light">#60ffffff</color>
+    <color name="emoji_splitter_light">#80ffffff</color>
+    <color name="emoji_splitter_vertical_light">#80ffffff</color>
+    <!-- dark -->
+    <color name="emoji_category_bg_dark">#e525292d</color>
+    <color name="emoji_category_btn_normal_dark">#00000000</color>
+    <color name="emoji_category_btn_selected_dark">#e5282c30</color>
+    <color name="emoji_category_btn_text_normal_dark">#4cffffff</color>
+    <color name="emoji_category_btn_text_selected_dark">#ffffff</color>
+    <color name="emoji_content_bg_dark">#99282c30</color>
+    <color name="emoji_content_text_bg_dark">#33000000</color>
+    <color name="emoji_type_bg_dark">#e51f2225</color>
+    <color name="emoji_type_btn_normal_dark">#00000000</color>
+    <color name="emoji_type_btn_selected_dark">#00000000</color>
+    <color name="emoji_type_btn_delete_normal_dark">#25292d</color>
+    <color name="emoji_type_btn_delete_selected_dark">#25292d</color>
+    <color name="emoji_splitter_dark">#2E3234</color>
+    <color name="emoji_splitter_vertical_dark">#3b4041</color>
+    <!-- white -->
+    <color name="emoji_category_bg_white">#00000000</color>
+    <color name="emoji_category_btn_normal_white">#00000000</color>
+    <color name="emoji_category_btn_selected_white">#ffffff</color>
+    <color name="emoji_category_btn_text_normal_white">#4c37474f</color>
+    <color name="emoji_category_btn_text_selected_white">#37474f</color>
+    <color name="emoji_content_bg_white">#4dffffff</color>
+    <color name="emoji_content_text_bg_white">#19000000</color>
+    <color name="emoji_type_bg_white">#00000000</color>
+    <color name="emoji_type_btn_normal_white">#00000000</color>
+    <color name="emoji_type_btn_selected_white">#00000000</color>
+    <color name="emoji_type_btn_delete_normal_white">#80ffffff</color>
+    <color name="emoji_type_btn_delete_selected_white">#60ffffff</color>
+    <color name="emoji_splitter_white">#80ffffff</color>
+    <color name="emoji_splitter_vertical_white">#80ffffff</color>
+
+    <color name="dialog_left_button_color">#ff02b389</color>
+    <color name="dialog_right_button_color">#A8000000</color>
+    <!--特殊皮肤展示的相关-->
+    <color name="special_skin_detail_download">#547DF9</color>
+    <color name="special_skin_star_color">#FFE932</color>
+    <color name="special_skin_detail_background">#F1F4F9</color>
+    <color name="special_skin_detail_guess">#666666</color>
+    <color name="special_skin_detail_introduce">#666666</color>
+    <color name="btn_activate_text_color">#ffffff</color>
+    <color name="btn_activate_solid_color">#547df9</color>
+    <!-- external_skin_panel-->
+    <color name="external_skin_panel">#4C000000</color>
+    <!-- voice -->
+    <color name="voice_gray">#666666</color>
+    <color name="skin_name">#55000000</color>
+    <color name="voice_name">#8F8F8F</color>
+    <color name="voice_seekbar_bg">#d9dbe7</color>
+    <color name="keyboard_content">#F1F4F9</color>
+    <color name="btn_keyboard_more_skin">#3B67F8</color>
+    <color name="layout_divider">#7F888C</color>
+    <color name="btn_note_normal">#ffffff</color>
+    <color name="btn_note_click">#E3E2E2</color>
+
+
+    <color name="install_btn_color">#75cf4b</color>
+    <color name="progress_bg">#d7dbe1</color>
+    <color name="progress_bg_two">#dddddd</color>
+    <color name="btn_use_bg">#fe5dac</color>
+    <color name="btn_in_use_bg">#ff2f2f</color>
+
+    <color name="note_bottom_bg">#f1f4f9</color>
+    <color name="note_add_color">#72a2ff</color>
+    
+    <color name="card_background">#ffffff</color>
+    <color name="card_shadow">#10000000</color>
+    <color name="lite_blue">#ff359ff2</color>
+    <color name="material_window_background">#00000000</color>
+    <color name="black_de">#DE000000</color>
+
+    <color name="grey_bg_3">#F2F2F2</color>
+    <color name="fb_page_guide_line">#373737</color>
+</resources>
