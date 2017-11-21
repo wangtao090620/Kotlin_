@@ -1,9 +1,9 @@
-package com.xm.kotlin.gank.data.android
+package com.xm.kotlin.gank.data
 
 /**
- * Created by wangtao on 2017/11/16.
+ * Created by wangtao on 2017/11/20.
  */
-data class AndroidData (
+data class GoodsData(
         val _id: String,
         val createdAt: String,
         val desc: String,

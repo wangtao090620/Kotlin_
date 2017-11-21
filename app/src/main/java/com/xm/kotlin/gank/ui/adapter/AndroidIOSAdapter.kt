@@ -1,25 +1,37 @@
 package com.xm.kotlin.gank.ui.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.bumptech.glide.Glide
 import com.xm.kotlin.gank.R
-import com.xm.kotlin.gank.data.android.AndroidItem
-import com.xm.kotlin.gank.item.GoodsItemClickListener
+import com.xm.kotlin.gank.common.Constants
+import com.xm.kotlin.gank.data.GoodsItem
+import com.xm.kotlin.gank.listener.GoodsItemClickListener
+import com.xm.kotlin.gank.ui.activity.DetailActivity
 
 /**
  * Created by wangtao on 2017/11/15.
  */
-class AndroidAdapter(val context: Context, val data: MutableList<AndroidItem>,val itemClickListener: GoodsItemClickListener) : RecyclerView.Adapter<AndroidAdapter.AndroidHolder>(){
+class AndroidIOSAdapter(val context: Context, val data: ArrayList<GoodsItem>, private val itemClickListener: GoodsItemClickListener) : RecyclerView.Adapter<AndroidIOSAdapter.IOSHolder>(), AdapterView.OnItemClickListener {
 
-    override fun onBindViewHolder(holder: AndroidHolder?, position: Int) {
+    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+
+        val intent = Intent(context, DetailActivity::class.java)
+
+        intent.putExtra(Constants.DETAIL_UTL, data.get(position).contentUrl)
+        context.startActivity(intent)
+    }
+
+    override fun onBindViewHolder(holder: IOSHolder?, position: Int) {
 
         if (data.get(position).hasImage!!) {
             holder?.mImageView?.visibility = View.VISIBLE
@@ -34,15 +46,11 @@ class AndroidAdapter(val context: Context, val data: MutableList<AndroidItem>,va
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): AndroidHolder? {
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): IOSHolder? {
 
         val view = LayoutInflater.from(context).inflate(R.layout.item_goods, parent, false)
 
-
-        view.setOnClickListener {
-
-        }
-        return AndroidHolder(view, itemClickListener)
+        return IOSHolder(view, itemClickListener)
     }
 
     override fun getItemCount(): Int {
@@ -51,12 +59,9 @@ class AndroidAdapter(val context: Context, val data: MutableList<AndroidItem>,va
     }
 
 
-    class AndroidHolder(itemView: View, private val itemClickListener: GoodsItemClickListener) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-
+    class IOSHolder(itemView: View, private val itemClickListener: GoodsItemClickListener) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         override fun onClick(v: View) {
-
             itemClickListener.itemClick(v, adapterPosition)
-
         }
 
         @BindView(R.id.iv_pic)
@@ -73,7 +78,6 @@ class AndroidAdapter(val context: Context, val data: MutableList<AndroidItem>,va
 
         init {
             ButterKnife.bind(this, itemView)
-
             itemView.setOnClickListener(this)
         }
 

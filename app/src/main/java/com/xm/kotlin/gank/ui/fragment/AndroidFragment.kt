@@ -13,10 +13,10 @@ import butterknife.ButterKnife
 import com.xm.kotlin.gank.R
 import com.xm.kotlin.gank.api.GankApi
 import com.xm.kotlin.gank.common.Constants
-import com.xm.kotlin.gank.data.android.AndroidItem
-import com.xm.kotlin.gank.item.GoodsItemClickListener
+import com.xm.kotlin.gank.data.GoodsItem
+import com.xm.kotlin.gank.listener.GoodsItemClickListener
 import com.xm.kotlin.gank.ui.activity.DetailActivity
-import com.xm.kotlin.gank.ui.adapter.AndroidAdapter
+import com.xm.kotlin.gank.ui.adapter.AndroidIOSAdapter
 import com.xm.kotlin.gank.utils.AndroidResultToItems
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -32,9 +32,9 @@ class AndroidFragment : Fragment() {
 
     private var mPage = 1
 
-    private var mData = ArrayList<AndroidItem>()
+    private var mData = ArrayList<GoodsItem>()
 
-    private var mAdapter: AndroidAdapter? = null
+    private var mAdapter: AndroidIOSAdapter? = null
 
     companion object {
         val Android = "Android"
@@ -73,7 +73,7 @@ class AndroidFragment : Fragment() {
             }
         })
 
-        mAdapter = AndroidAdapter(context, mData, object : GoodsItemClickListener {
+        mAdapter = AndroidIOSAdapter(context, mData, object : GoodsItemClickListener {
 
             override fun itemClick(view: View, position: Int) {
                 val intent = Intent(context, DetailActivity::class.java)
@@ -93,7 +93,7 @@ class AndroidFragment : Fragment() {
 
 
     private fun loadData(page: Int) {
-        val gankApi = GankApi.createGirlsApi()
+        val gankApi = GankApi.createContentApi()
 
         if (gankApi != null) {
 
@@ -112,7 +112,7 @@ class AndroidFragment : Fragment() {
         }
     }
 
-    private fun setData(result: MutableList<AndroidItem>) {
+    private fun setData(result: MutableList<GoodsItem>) {
 
         mData.addAll(result)
 

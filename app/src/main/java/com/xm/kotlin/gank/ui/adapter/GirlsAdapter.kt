@@ -13,19 +13,19 @@ import butterknife.ButterKnife
 import com.bumptech.glide.Glide
 import com.xm.kotlin.gank.R
 import com.xm.kotlin.gank.common.Constants
-import com.xm.kotlin.gank.data.girl.GirlItem
-import com.xm.kotlin.gank.item.GoodsItemClickListener
+import com.xm.kotlin.gank.data.GoodsItem
+import com.xm.kotlin.gank.listener.GoodsItemClickListener
 import com.xm.kotlin.gank.ui.activity.GirlDetailActivity
 
 /**
  * Created by wangtao on 2017/11/15.
  */
-class GirlsAdapter(val context: Context, val data: MutableList<GirlItem>, private val itemClickListener: GoodsItemClickListener) : RecyclerView.Adapter<GirlsAdapter.GirlViewHolder>(), AdapterView.OnItemClickListener {
+class GirlsAdapter(val context: Context, val data: MutableList<GoodsItem>, private val itemClickListener: GoodsItemClickListener) : RecyclerView.Adapter<GirlsAdapter.GirlViewHolder>(), AdapterView.OnItemClickListener {
 
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 
         val intent = Intent(context, GirlDetailActivity::class.java)
-        intent.putExtra(Constants.DETAIL_UTL, data.get(position).imageUrl)
+        intent.putExtra(Constants.DETAIL_UTL, data.get(position).url)
         context.startActivity(intent)
     }
 
@@ -33,7 +33,7 @@ class GirlsAdapter(val context: Context, val data: MutableList<GirlItem>, privat
     override fun onBindViewHolder(holder: GirlViewHolder?, position: Int) {
 
 
-        Glide.with(context).load(data.get(position).imageUrl).into(holder?.mImageView)
+        Glide.with(context).load(data.get(position).url).into(holder?.mImageView)
 
     }
 

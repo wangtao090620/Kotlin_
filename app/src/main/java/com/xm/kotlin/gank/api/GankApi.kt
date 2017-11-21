@@ -2,7 +2,6 @@ package com.xm.kotlin.gank.api
 
 import com.xm.kotlin.gank.MyApp
 import com.xm.kotlin.gank.common.Constants
-import com.xm.kotlin.gank.photo.GirlsApi
 import com.xm.kotlin.gank.utils.NetworkUtil
 import okhttp3.Cache
 import okhttp3.CacheControl
@@ -20,7 +19,7 @@ import java.util.concurrent.TimeUnit
  */
 object GankApi {
 
-    private var girlsApi: GirlsApi? = null
+    private var girlsApi: ContentApi? = null
 
     private var retrofit: Retrofit? = null
 
@@ -71,7 +70,7 @@ object GankApi {
 
     private val rxJava2CallAdapterFactory: RxJava2CallAdapterFactory = RxJava2CallAdapterFactory.create()
 
-    fun createGirlsApi(): GirlsApi? {
+    fun createContentApi(): ContentApi? {
 
 
         if (girlsApi == null) {
@@ -82,7 +81,7 @@ object GankApi {
                     .addConverterFactory(converterFactory)
                     .addCallAdapterFactory(rxJava2CallAdapterFactory)
                     .build()
-            girlsApi = retrofit?.create(GirlsApi::class.java)
+            girlsApi = retrofit?.create(ContentApi::class.java)
         }
 
         return girlsApi

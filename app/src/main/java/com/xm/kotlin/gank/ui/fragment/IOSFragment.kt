@@ -13,10 +13,10 @@ import butterknife.ButterKnife
 import com.xm.kotlin.gank.R
 import com.xm.kotlin.gank.api.GankApi
 import com.xm.kotlin.gank.common.Constants
-import com.xm.kotlin.gank.data.ios.IOSItem
-import com.xm.kotlin.gank.item.GoodsItemClickListener
+import com.xm.kotlin.gank.data.GoodsItem
+import com.xm.kotlin.gank.listener.GoodsItemClickListener
 import com.xm.kotlin.gank.ui.activity.DetailActivity
-import com.xm.kotlin.gank.ui.adapter.IOSAdapter
+import com.xm.kotlin.gank.ui.adapter.AndroidIOSAdapter
 import com.xm.kotlin.gank.utils.IOSResultToItems
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -31,9 +31,9 @@ class IOSFragment : Fragment() {
 
     private var mPage = 1
 
-    private var mData = ArrayList<IOSItem>()
+    private var mData = ArrayList<GoodsItem>()
 
-    private var mAdapter: IOSAdapter? = null
+    private var mAdapter: AndroidIOSAdapter? = null
 
     companion object {
         val IOS = "IOS"
@@ -72,7 +72,7 @@ class IOSFragment : Fragment() {
             }
         })
 
-        mAdapter = IOSAdapter(context, mData,object : GoodsItemClickListener {
+        mAdapter = AndroidIOSAdapter(context, mData,object : GoodsItemClickListener {
 
             override fun itemClick(view: View, position: Int) {
                 val intent = Intent(context, DetailActivity::class.java)
@@ -92,7 +92,7 @@ class IOSFragment : Fragment() {
     }
 
     private fun loadData(page: Int) {
-        val gankApi = GankApi.createGirlsApi()
+        val gankApi = GankApi.createContentApi()
 
         if (gankApi != null) {
             gankApi.getIOS(page)
@@ -110,7 +110,7 @@ class IOSFragment : Fragment() {
         }
     }
 
-    private fun setData(result: MutableList<IOSItem>) {
+    private fun setData(result: MutableList<GoodsItem>) {
         mData.addAll(result)
         mAdapter?.notifyDataSetChanged()
     }

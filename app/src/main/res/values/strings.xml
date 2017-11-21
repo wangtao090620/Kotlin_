@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kotlin_GanK</string>
+    <string name="app_name">Kotlin</string>
     <string name="product_name">Gank</string>
     <string name="todo">TODO</string>
 </resources>

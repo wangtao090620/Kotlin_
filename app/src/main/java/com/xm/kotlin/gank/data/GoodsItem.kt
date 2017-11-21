@@ -1,9 +1,9 @@
-package com.xm.kotlin.gank.data.android
+package com.xm.kotlin.gank.data
 
 /**
- * Created by wangtao on 2017/11/17.
+ * Created by wangtao on 2017/11/20.
  */
-class AndroidItem {
+class GoodsItem {
     var description: String? = null
     var who: String? = null
     var url: String? = null

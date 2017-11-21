@@ -1,8 +1,9 @@
 package com.xm.kotlin.gank.utils
 
-import com.xm.kotlin.gank.data.ios.IOSData
-import com.xm.kotlin.gank.data.ios.IOSItem
-import com.xm.kotlin.gank.data.ios.IOSResult
+import android.annotation.SuppressLint
+import com.xm.kotlin.gank.data.GoodsData
+import com.xm.kotlin.gank.data.GoodsItem
+import com.xm.kotlin.gank.data.GoodsResult
 import io.reactivex.functions.Function
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -10,7 +11,7 @@ import java.text.SimpleDateFormat
 /**
  * Created by wangtao on 2017/11/15.
  */
-class IOSResultToItems private constructor() : Function<IOSResult<List<IOSData>>, MutableList<IOSItem>> {
+class IOSResultToItems private constructor() : Function<GoodsResult<List<GoodsData>>, MutableList<GoodsItem>> {
 
     companion object {
 
@@ -18,37 +19,46 @@ class IOSResultToItems private constructor() : Function<IOSResult<List<IOSData>>
 
     }
 
-    override fun apply(t: IOSResult<List<IOSData>>): MutableList<IOSItem> {
+    @SuppressLint("SimpleDateFormat")
+    override fun apply(t: GoodsResult<List<GoodsData>>): MutableList<GoodsItem> {
 
-        val gankIOS = t.results
+        val list = t.results
 
-        val items = arrayListOf<IOSItem>()
+        val items = arrayListOf<GoodsItem>()
+
+        val urls = ArrayList<String>()
 
         val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SS'Z'")
 
         val outputFormat = SimpleDateFormat("yy/MM/dd HH:mm:ss")
 
-        for (iosData in gankIOS) {
-            val item = IOSItem()
-            try {
-                val date = inputFormat.parse(iosData.createdAt)
-                item.time = outputFormat.format(date)
-            } catch (e: ParseException) {
-                e.printStackTrace()
-            }
+        if (list != null) {
+            for (data in list) {
+                val item = GoodsItem()
+                try {
+                    val date = inputFormat.parse(data.createdAt)
+                    item.time = outputFormat.format(date)
+                } catch (e: ParseException) {
+                    e.printStackTrace()
+                }
 
-            if (iosData.images == null) {
-                item.hasImage = false
-            } else {
-                item.hasImage = true
-                item.url = iosData.images[0]
+                if (data.images == null) {
+                    item.hasImage = false
+                } else {
+                    item.hasImage = true
+                    item.url = data.images[0]
+                }
+                item.contentUrl = data.url
+                item.who = data.who
+                item.description = data.desc
+
+                if (!urls.contains(data.url)) {
+                    urls.add(data.url)
+                    items.add(item)
+                }
             }
-            item.contentUrl = iosData.url
-            item.who = iosData.who
-            item.description = iosData.desc
-            items.add(item)
         }
-
+        urls.clear()
         return items
     }
 }

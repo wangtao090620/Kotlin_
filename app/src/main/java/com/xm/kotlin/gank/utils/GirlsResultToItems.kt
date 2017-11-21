@@ -1,8 +1,9 @@
 package com.xm.kotlin.gank.utils
 
-import com.xm.kotlin.gank.data.girl.GirlData
-import com.xm.kotlin.gank.data.girl.GirlItem
-import com.xm.kotlin.gank.data.girl.GirlResults
+import android.annotation.SuppressLint
+import com.xm.kotlin.gank.data.GoodsData
+import com.xm.kotlin.gank.data.GoodsItem
+import com.xm.kotlin.gank.data.GoodsResult
 import io.reactivex.functions.Function
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -10,7 +11,7 @@ import java.text.SimpleDateFormat
 /**
  * Created by wangtao on 2017/11/15.
  */
-class GirlsResultToItems private constructor() : Function<GirlResults<List<GirlData>>, MutableList<GirlItem>> {
+class GirlsResultToItems private constructor() : Function<GoodsResult<List<GoodsData>>, MutableList<GoodsItem>> {
 
     companion object {
 
@@ -18,21 +19,22 @@ class GirlsResultToItems private constructor() : Function<GirlResults<List<GirlD
 
     }
 
-    override fun apply(t: GirlResults<List<GirlData>>): MutableList<GirlItem> {
+    @SuppressLint("SimpleDateFormat")
+    override fun apply(t: GoodsResult<List<GoodsData>>): MutableList<GoodsItem> {
 
-        println("apply haha "+t)
+        val list = t.results
 
-        val gankBeauties = t.results
+        val items = ArrayList<GoodsItem>()
 
-        val items = arrayListOf<GirlItem>()
+        val urls = ArrayList<String>()
 
         val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SS'Z'")
 
         val outputFormat = SimpleDateFormat("yy/MM/dd HH:mm:ss")
 
-        if (gankBeauties != null) {
-            for (gankBeauty in gankBeauties) {
-                val item = GirlItem()
+        if (list != null) {
+            for (gankBeauty in list) {
+                val item = GoodsItem()
                 try {
                     val date = inputFormat.parse(gankBeauty.createdAt)
                     item.description = outputFormat.format(date)
@@ -40,10 +42,18 @@ class GirlsResultToItems private constructor() : Function<GirlResults<List<GirlD
                     e.printStackTrace()
                     item.description = "unknown date"
                 }
-                item.imageUrl = gankBeauty.url
-                items.add(item)
+                item.url = gankBeauty.url
+
+                if (!urls.contains(gankBeauty.url)) {
+                    items.add(item)
+                    urls.add(gankBeauty.url)
+                }
+
             }
         }
+
+
+        urls.clear()
         return items
     }
 }

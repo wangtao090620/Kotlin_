@@ -13,8 +13,8 @@ import butterknife.ButterKnife
 import com.xm.kotlin.gank.R
 import com.xm.kotlin.gank.api.GankApi
 import com.xm.kotlin.gank.common.Constants
-import com.xm.kotlin.gank.data.girl.GirlItem
-import com.xm.kotlin.gank.item.GoodsItemClickListener
+import com.xm.kotlin.gank.data.GoodsItem
+import com.xm.kotlin.gank.listener.GoodsItemClickListener
 import com.xm.kotlin.gank.ui.activity.GirlDetailActivity
 import com.xm.kotlin.gank.ui.adapter.GirlsAdapter
 import com.xm.kotlin.gank.utils.GirlsResultToItems
@@ -32,7 +32,7 @@ class GirlFragment : Fragment() {
 
     private var mPage = 1
 
-    private var mData = ArrayList<GirlItem>()
+    private var mData = ArrayList<GoodsItem>()
 
     private var mAdapter: GirlsAdapter? = null
 
@@ -79,7 +79,7 @@ class GirlFragment : Fragment() {
         mAdapter = GirlsAdapter(context, mData, object : GoodsItemClickListener {
             override fun itemClick(view: View, position: Int) {
                 val intent = Intent(context, GirlDetailActivity::class.java)
-                intent.putExtra(Constants.DETAIL_UTL, mData.get(position).imageUrl)
+                intent.putExtra(Constants.DETAIL_UTL, mData.get(position).url)
                 context.startActivity(intent)
             }
         })
@@ -93,7 +93,7 @@ class GirlFragment : Fragment() {
     }
 
     private fun loadData(page: Int) {
-        val gankApi = GankApi.createGirlsApi()
+        val gankApi = GankApi.createContentApi()
 
         if (gankApi != null) {
 
@@ -113,7 +113,7 @@ class GirlFragment : Fragment() {
         }
     }
 
-    private fun setData(result: MutableList<GirlItem>) {
+    private fun setData(result: MutableList<GoodsItem>) {
 
         mData.addAll(result)
 
